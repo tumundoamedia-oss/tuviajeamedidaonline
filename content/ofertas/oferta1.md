@@ -1,0 +1,1 @@
+---\ntitle: 'París Romántico'\ndescription: '3 días / 2 noches - Desde 599€'\nimage: '/images/uploads/paris.jpg'\nwhatsapp: 'https://wa.me/34603268490?text=Hola! Quiero info de París Romántico'\n---

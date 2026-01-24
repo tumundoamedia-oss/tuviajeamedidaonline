@@ -1,41 +1,42 @@
+
 backend:
   name: github
   repo: tumundoamedia-oss/tuviajeamedidaonline
   branch: main
 
-media_folder: "public/uploads"
-public_folder: "/uploads"
+media_folder: "public/images/uploads" # folder for uploaded images
+public_folder: "/images/uploads"
 
 collections:
-  - name: "home"
-    label: "Inicio"
-    files:
-      - file: "index.html"
-        label: "Página Principal"
-        name: "home_page"
-        fields:
-          - { label: "Título Hero", name: "hero_title", widget: "string" }
-          - { label: "Subtítulo Hero", name: "hero_subtitle", widget: "string" }
-          - { label: "Imagen Hero", name: "hero_image", widget: "image" }
-
   - name: "ofertas"
     label: "Ofertas"
-    folder: "src/content/ofertas"
+    folder: "content/ofertas"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Imagen", name: "image", widget: "image" }
       - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "Precio", name: "price", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
       - { label: "WhatsApp Link", name: "whatsapp", widget: "string" }
 
   - name: "servicios"
     label: "Servicios"
-    folder: "src/content/servicios"
+    folder: "content/servicios"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Imagen", name: "image", widget: "image" }
       - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Imagen", name: "image", widget: "image" }
+
+  - name: "paquetes"
+    label: "Paquetes"
+    folder: "content/paquetes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Imagen", name: "image", widget: "image" }
+
+
