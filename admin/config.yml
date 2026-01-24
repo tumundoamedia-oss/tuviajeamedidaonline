@@ -3,18 +3,5 @@ backend:
   repo: yourusername/yourrepo
   branch: main
 
-media_folder: "public/images"
-public_folder: "/images"
 
-collections:
-  - name: "ofertas"
-    label: "Ofertas"
-    folder: "src/content/ofertas"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Precio", name: "price", widget: "string" }
-      - { label: "Imagen", name: "image", widget: "image" }
-      - { label: "WhatsApp Mensaje", name: "whatsapp", widget: "string" }
 
