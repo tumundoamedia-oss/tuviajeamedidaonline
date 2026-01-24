@@ -1,11 +1,10 @@
-
 backend:
   name: github
   repo: tumundoamedia-oss/tuviajeamedidaonline
   branch: main
 
-media_folder: "public/images/uploads" # folder for uploaded images
-public_folder: "/images/uploads"
+media_folder: "public/images/uploads" # Where uploaded images go
+public_folder: "/images/uploads"      # Path used in Markdown
 
 collections:
   - name: "ofertas"
@@ -14,10 +13,10 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "Imagen", name: "image", widget: "image" }
-      - { label: "WhatsApp Link", name: "whatsapp", widget: "string" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "WhatsApp Link", name: "whatsapp", widget: "string"}
 
   - name: "servicios"
     label: "Servicios"
@@ -25,9 +24,10 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "Imagen", name: "image", widget: "image" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "WhatsApp Link", name: "whatsapp", widget: "string"}
 
   - name: "paquetes"
     label: "Paquetes"
@@ -35,8 +35,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "Imagen", name: "image", widget: "image" }
-
-
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "WhatsApp Link", name: "whatsapp", widget: "string"}
