@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: yourusername/yourrepo
   branch: main
 
 media_folder: "public/images"
@@ -16,3 +17,4 @@ collections:
       - { label: "Precio", name: "price", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
       - { label: "WhatsApp Mensaje", name: "whatsapp", widget: "string" }
+
