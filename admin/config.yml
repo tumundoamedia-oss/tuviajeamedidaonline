@@ -3,6 +3,15 @@ backend:
   repo: tumundoamedia-oss/tuviajeamedidaonline
   branch: main
 
+media_folder: "public/uploads"
+public_folder: "/uploads"
 
-
-
+collections:
+  - name: "home"
+    label: "Página Inicio"
+    file: "src/pages/index.astro"
+    fields:
+      - { label: "Título Hero", name: "hero_title", widget: "string" }
+      - { label: "Subtítulo Hero", name: "hero_subtitle", widget: "string" }
+      - { label: "Texto Inicio", name: "inicio_text", widget: "markdown" }
+      - { label: "Imagen Hero", name: "hero_image", widget: "image" }
