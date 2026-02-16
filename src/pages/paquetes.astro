@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const whatsappNumber = "34603268490";
+
+const paquetes = [
+  {
+    title: "Europa Clásica en 10 días",
+    description: "Un recorrido por París, Roma y Ámsterdam en tren, con hoteles y transporte incluidos.",
+    image: "/images/uploads/europa-classica.jpg"
+  },
+  {
+    title: "Trenes de Suiza y Austria",
+    description: "Explora los Alpes en tren panorámico durante 7 días, con paisajes inolvidables.",
+    image: "/images/uploads/suiza-austria.jpg"
+  },
+  {
+    title: "Caribe y Relax Total",
+    description: "7 noches en un resort todo incluido en el Caribe, ideal para desconectar.",
+    image: "/images/uploads/caribe-relax.jpg"
+  },
+  {
+    title: "Italia Gastronómica",
+    description: "Tour culinario de 6 días por Roma, Florencia y Milán, incluyendo clases de cocina.",
+    image: "/images/uploads/italia-gastronomica.jpg"
+  }
+];
+---
+
+<BaseLayout title="Paquetes de Viaje | Tu Mundo a Medida">
+
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 20px;">
+    <h1 style="text-align:center; font-size:3rem; margin-bottom:3.5rem; color: var(--primary);">
+      Paquetes de Viaje
+    </h1>
+
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.8rem;
+    ">
+      {paquetes.map(paquete => (
+        <div class="card">
+          <img 
+            src={paquete.image} 
+            alt={paquete.title} 
+            style="width:100%; height:280px; object-fit:cover;"
+            loading="lazy"
+          />
+          <div style="padding: 2rem;">
+            <h2 style="font-size:1.85rem; margin-bottom:1rem; color: var(--primary);">
+              {paquete.title}
+            </h2>
+            <p style="color: var(--text-light); line-height:1.7; margin-bottom:1.8rem;">
+              {paquete.description}
+            </p>
+            <a
+              href={`https://wa.me/${whatsappNumber}?text=Hola!%20Quiero%20información%20sobre%20${encodeURIComponent(paquete.title)}`}
+              target="_blank"
+              class="btn-whatsapp"
+              style="width: 100%; text-align: center; font-size: 1.1rem;"
+            >
+              Consultar este paquete
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+
+</BaseLayout>
