@@ -1,0 +1,24 @@
+import { defineCollection, z } from 'astro:content';
+
+const travelSchema = z.object({
+  title: z.string(),
+  image: z.string().optional(),
+  description: z.string().optional(),
+  whatsapp: z.string().optional(),
+});
+
+export const collections = {
+  servicios: defineCollection({
+    type: 'content',
+    schema: travelSchema,
+  }),
+  paquetes: defineCollection({
+    type: 'content',
+    schema: travelSchema,
+  }),
+  // Adding this to stop the warning in your terminal
+  ofertas: defineCollection({
+    type: 'content',
+    schema: travelSchema,
+  }),
+};

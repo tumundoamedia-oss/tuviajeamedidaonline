@@ -1,0 +1,59 @@
+---
+// Import the collection tool if you need it, 
+// though usually, you fetch data in the Page, not the Layout.
+import { getCollection } from 'astro:content';
+
+// Define the title prop so your pages can pass their names to the layout
+const { title = "Tu Mundo a Medida" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <style is:global>
+        :root { --primary: #003366; --text: #333; }
+        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--text); line-height: 1.6; }
+        
+        /* Header Styles */
+        header { background: #fff; border-bottom: 1px solid #eaeaea; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; color: var(--primary); }
+        nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: var(--text); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
+
+        /* Footer Styles */
+        footer { background: #111; color: #fff; padding: 4rem 5% 2rem; text-align: center; margin-top: 4rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; max-width: 1200px; margin: 0 auto 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">TU MUNDO A MEDIDA</div>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/ofertas">Ofertas</a></li>
+                <li><a href="/paquetes">Paquetes</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <slot /> <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>Sobre Nosotros</h4>
+                <p>Experiencias de viaje únicas diseñadas para ti.</p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p>Email: info@tumundoamedida.com</p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #333; padding-top: 2rem; font-size: 0.8rem; color: #777;">
+            &copy; 2026 Tu Mundo a Medida. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>

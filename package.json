@@ -1,5 +1,34 @@
 {
+  "name": "tu-viaje-a-medida",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "proxy": "NODE_OPTIONS='--dns-result-order=ipv4first' npx decap-server",
+    "cms": "run-p dev proxy",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "astro": "^5.17.1",
+    "typescript": "^5.9.3"
+  },
   "devDependencies": {
-    "netlify-cms-proxy-server": "^1.3.24"
-  }
+    "decap-server": "^3.5.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tumundoamedia-oss/tuviajeamedidaonline.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tumundoamedia-oss/tuviajeamedidaonline/issues"
+  },
+  "homepage": "https://github.com/tumundoamedidaonline#readme"
 }

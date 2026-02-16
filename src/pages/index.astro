@@ -1,0 +1,313 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const whatsappNumber = "34603268490";
+
+const experiencias = [
+  {
+    title: "Suiza Alpina en Tren",
+    description: "Viaja por los Alpes suizos en tren panorámico, sin prisas y con paisajes que parecen irreales.",
+    image: "/images/uploads/switzerland.png"
+  },
+  {
+    title: "París Auténtico",
+    description: "Vive París más allá de lo turístico: barrios locales, gastronomía y tiempo para disfrutar.",
+    image: "/images/uploads/headerphotoparis.avif"
+  },
+  {
+    title: "Europa a tu Ritmo",
+    description: "Un recorrido diseñado especialmente para ti, usando trenes y transporte local.",
+    image: "/images/uploads/map.jpg"
+  }
+];
+
+const servicios = [
+  { title: "Grupos Reducidos", image: "/images/uploads/photo-1516426122078-c23e76319801.avif" },
+  { title: "Viajes en Tren", image: "/images/uploads/photo-1483683804023-6ccdb62f86ef.jpg" },
+  { title: "Asistencia en Español", image: "/images/uploads/photo-1506806732259-39c2d0268443.avif" },
+  { title: "Acompañamiento Total", image: "/images/uploads/photo-1542744173-8e7e53415bb0.jpg" }
+];
+---
+
+<BaseLayout title="Tu Mundo a Medida | Viajes a Europa para Peruanos">
+
+  <!-- Estilos globales -->
+  <style is:global>
+    :root {
+      --primary: #0f4c75;
+      --accent: #c2410c;
+      --text: #111827;
+      --text-light: #4b5563;
+      --bg: #fdfdfd;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .btn-whatsapp {
+      background: var(--accent);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.32s ease;
+      box-shadow: 0 6px 16px rgba(194, 65, 12, 0.18);
+    }
+
+    .btn-whatsapp:hover {
+      background: #a33c0a;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(194, 65, 12, 0.28);
+    }
+
+    .card {
+      transition: all 0.4s ease;
+      border-radius: 20px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    }
+
+    .social-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin: 0 12px;
+      transition: color 0.3s ease;
+    }
+
+    .social-link:hover {
+      color: #60a5fa;
+    }
+  </style>
+
+  <!-- Fuentes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Hero con parallax -->
+  <header style="
+    height: 95vh;
+    min-height: 680px;
+    background-image: url('/images/uploads/headerphotoparis.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+  ">
+    <div style="
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.62));
+      z-index: 1;
+    "></div>
+
+    <div style="
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      text-align: center;
+      padding: 0 24px;
+    ">
+      <h1 style="
+        font-size: clamp(2.8rem, 7.5vw, 5.2rem);
+        line-height: 1.05;
+        margin-bottom: 1.4rem;
+        text-shadow: 0 4px 14px rgba(0,0,0,0.5);
+      ">
+        Viajes a Europa<br>hechos a tu medida
+      </h1>
+
+      <p style="
+        font-size: clamp(1.25rem, 3.8vw, 1.85rem);
+        max-width: 780px;
+        margin: 0 auto 2.8rem;
+        font-weight: 300;
+        opacity: 0.94;
+      ">
+        Para peruanos • Sin tours masivos • Sin estrés • Con acompañamiento total en español
+      </p>
+
+      <a 
+        href={`https://wa.me/${whatsappNumber}?text=¡Hola!%20Quiero%20información%20sobre%20viajes%20a%20Europa%20personalizados`}
+        target="_blank"
+        class="btn-whatsapp"
+        style="font-size: 1.25rem; padding: 18px 42px;"
+      >
+        Habla conmigo por WhatsApp →
+      </a>
+    </div>
+  </header>
+
+  <main style="max-width: 1280px; margin: 0 auto; padding: 0 20px;">
+
+    <!-- Sección ¿Por qué nosotros? -->
+    <section style="padding: 120px 0; text-align: center;">
+      <h2 style="font-size: 2.9rem; margin-bottom: 5rem; color: var(--primary);">
+        ¿Por qué elegirnos?
+      </h2>
+
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 3.5rem;
+        justify-items: center;
+      ">
+        {servicios.map(s => (
+          <div style="text-align: center; max-width: 260px;">
+            <div style="
+              width: 180px;
+              height: 180px;
+              border-radius: 50%;
+              overflow: hidden;
+              margin: 0 auto 1.6rem;
+              box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+            ">
+              <img 
+                src={s.image} 
+                alt={s.title} 
+                loading="lazy" 
+                style="width:100%; height:100%; object-fit:cover;"
+              />
+            </div>
+            <h3 style="font-size: 1.45rem; color: var(--primary);">
+              {s.title}
+            </h3>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Experiencias -->
+    <section style="
+      padding: 100px 0;
+      background: linear-gradient(135deg, #f0f7ff, #e5f0ff);
+      border-radius: 24px;
+      margin: 0 -20px;
+    ">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 20px;">
+        <h2 style="
+          text-align: center;
+          font-size: 3rem;
+          margin-bottom: 5rem;
+          color: var(--primary);
+        ">
+          Experiencias que recordarán para siempre
+        </h2>
+
+        <div style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+          gap: 2.8rem;
+        ">
+          {experiencias.map(exp => (
+            <div class="card">
+              <img 
+                src={exp.image} 
+                alt={exp.title} 
+                loading="lazy" 
+                style="width:100%; height:280px; object-fit:cover;"
+              />
+              <div style="padding: 2.2rem;">
+                <h3 style="font-size: 1.85rem; margin-bottom: 1rem; color: var(--primary);">
+                  {exp.title}
+                </h3>
+                <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.8rem;">
+                  {exp.description}
+                </p>
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=Hola!%20Me%20interesa%20${encodeURIComponent(exp.title)}`}
+                  target="_blank"
+                  class="btn-whatsapp"
+                  style="width: 100%; text-align: center; font-size: 1.1rem;"
+                >
+                  Consultar este viaje
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section style="
+      padding: 140px 20px;
+      text-align: center;
+      background: var(--primary);
+      color: white;
+      margin: 100px -20px 0;
+    ">
+      <h2 style="font-size: 2.9rem; margin-bottom: 1.6rem;">
+        ¿Listo para tu aventura personalizada?
+      </h2>
+      <p style="
+        font-size: 1.4rem;
+        max-width: 720px;
+        margin: 0 auto 2.8rem;
+        opacity: 0.92;
+      ">
+        Escríbeme y armamos juntos el viaje perfecto, sin masas ni estrés.
+      </p>
+      <a 
+        href={`https://wa.me/${whatsappNumber}`}
+        target="_blank"
+        class="btn-whatsapp"
+        style="font-size: 1.35rem; padding: 20px 48px;"
+      >
+        Empezar ahora por WhatsApp
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer actualizado con redes sociales -->
+  <footer style="
+    background: #0f172a;
+    color: #cbd5e1;
+    padding: 80px 20px 50px;
+    text-align: center;
+    font-size: 0.98rem;
+  ">
+    <p>© {new Date().getFullYear()} Tu Mundo a Medida • Viajes personalizados a Europa para peruanos</p>
+    
+    <div style="margin: 1.8rem 0 1.2rem; font-size: 1.1rem;">
+      <a href={`https://wa.me/${whatsappNumber}`} style="color: #60a5fa; text-decoration: none;">WhatsApp: +34 603 268 490</a><br>
+      <a href="mailto:info@tumundoamedida.com" style="color: #60a5fa; text-decoration: none;">Email: info@tumundoamedida.com</a>
+    </div>
+
+    <!-- Redes sociales -->
+    <div style="margin-top: 1.5rem;">
+      <a href="https://www.facebook.com/TuMundoAmedida" target="_blank" class="social-link" title="Síguenos en Facebook">
+        📘 Facebook: TuMundoAmedida
+      </a>
+      <br style="margin: 0.5rem 0; display: block;" />
+      <a href="https://www.instagram.com/TuMundoAmedida" target="_blank" class="social-link" title="Síguenos en Instagram">
+        📸 Instagram: TuMundoAmedida
+      </a>
+    </div>
+  </footer>
+
+</BaseLayout>
